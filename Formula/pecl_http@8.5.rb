@@ -10,6 +10,7 @@ class PeclHttpAT85 < AbstractPhpExtension
   homepage "https://github.com/m6w6/ext-http"
   url "https://pecl.php.net/get/pecl_http-4.2.6.tgz"
   sha256 "cd33230050b3f7c5ddb6f4383ce2a81f0bcdb934432029eec72ebf0f942b876d"
+  revision 1
   head "https://github.com/m6w6/ext-http.git", branch: "master"
   license "BSD-2-Clause"
 
@@ -20,16 +21,16 @@ class PeclHttpAT85 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "35e0caa924c91699b0eb22decee149b910f7758eb328e281308fbc5bde1f2217"
-    sha256 cellar: :any,                 arm64_sonoma:  "7cd64f6bf5b86a0ee95295f9ca166fdf00d8dbfe36310ace925918250ee85bd4"
-    sha256 cellar: :any,                 arm64_ventura: "a752c677d5eeab3e5cdbe78ad973308bd6194f75756d58661afd7cebe9b3e4bd"
-    sha256 cellar: :any,                 ventura:       "c437f20730c9cb07c4e84e0063f830b09f853f5c8f07b5bf08429304671fe98d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fd5b9d1632c9d6a45ea5730084cb46f0b32e80c71ab447ef83c26d00f23b375"
+    sha256 cellar: :any,                 arm64_sequoia: "e4cb17e79fff1d4c892110fda9f306d108c402c70ace234c1ee89452967b8bb5"
+    sha256 cellar: :any,                 arm64_sonoma:  "77639a23da996e1fe06ba9cc8bd9bff9356dc5dd8547834fc1417c7cb2fcb94a"
+    sha256 cellar: :any,                 arm64_ventura: "152ee88baf80bb60fe4a0c47c5de42067cbe865562a912b54280c6a9a6a67d5a"
+    sha256 cellar: :any,                 ventura:       "8093e3f59932a5a2f8a4a666b3415c7042f59482e7333e9a171dbf89f0040903"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2df32bf41afa74cb54196ed8f83858b907a9bd8535495f115a9dab799037d283"
   end
 
   depends_on "brotli"
   depends_on "curl"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "libevent"
   depends_on "libidn2"
   depends_on "shivammathur/extensions/raphf@8.5"
