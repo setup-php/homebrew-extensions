@@ -8,20 +8,20 @@ class ImapAT73 < AbstractPhpExtension
   init
   desc "Imap PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/shivammathur/php-src-backports/archive/6e8642559e91f9f4321f9b8be3d4bacb1ebffb71.tar.gz"
+  url "https://github.com/shivammathur/php-src-backports/archive/580fe100065f1cd83ac2ad5a6254a1f95dde93ee.tar.gz"
   version "7.3.33"
-  sha256 "20800afaac39c391c9d314a076160ffc9a7542149799b5688bbc029721b67cb1"
+  sha256 "c3bb3db324daed97e2c50f2755462df5b0cb4b912ab5b38c96dc6cfaca92475e"
   license "PHP-3.01"
   revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 10
-    sha256 cellar: :any,                 arm64_sequoia: "ef8a8cc5a7ae9c9535d3b391411934e19a55bf75fabaceb5dffbcca946f7f943"
-    sha256 cellar: :any,                 arm64_sonoma:  "a056037bd9029825b7f94134d7e7cddfe805ffc14775c2c8eda1e7ec3c836638"
-    sha256 cellar: :any,                 arm64_ventura: "d3550771332ecad1754d77ef8e693f61c267e01f238655634fd43dedf8770184"
-    sha256 cellar: :any,                 ventura:       "b339a6d94d18cf95a9504d81fa7d3b8a874bb741e23456e6052345c785e98c39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37131bd2382f7bccfca21fd6ff7f3cc88c2a32c4169ee6a63f7ac0fe25b059b8"
+    rebuild 11
+    sha256 cellar: :any,                 arm64_sequoia: "a096409ba54c967874b4234544adce9a94f1a670c419a2fbd481520376f89bf1"
+    sha256 cellar: :any,                 arm64_sonoma:  "e7e7a253d69450b1e43b0ca3e6481401e02ce5d7b20a27c3d2ac507967376815"
+    sha256 cellar: :any,                 arm64_ventura: "d70ebde39246c840509902d5c38c9edfe22832bbac2c12fa4ed9b2b982537438"
+    sha256 cellar: :any,                 ventura:       "63b42eb72b09459843a93a2d5275a5e61d7266f9b4018ffd09a50bfbf8f423b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f2fb12bc908123c3875e5f6e79ae2a4e7c0d48e0c717fcd898ac1e2f0ed190e"
   end
 
   depends_on "krb5"

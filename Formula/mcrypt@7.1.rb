@@ -8,19 +8,19 @@ class McryptAT71 < AbstractPhpExtension
   init
   desc "Mcrypt PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/shivammathur/php-src-backports/archive/0b2d7b889ff02945ff13e630654f861fd6d04851.tar.gz"
+  url "https://github.com/shivammathur/php-src-backports/archive/dc8d6277d12d445642139b8a7c104898a5a80f80.tar.gz"
   version "7.1.33"
-  sha256 "18aa3a76a05c2c9b3c8b1452d64b6b31bcb58bc163ce9927f1751f2a8cf81e23"
+  sha256 "3e7a3342f58ca8698635631993a91541d88e7ddf3335e15194d23dafd5bae409"
   license "PHP-3.01"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 19
-    sha256 cellar: :any,                 arm64_sequoia: "bcd5ed5e528666e2879529118c66963f953a7ca2c6b383a9adbca32e353a0cbd"
-    sha256 cellar: :any,                 arm64_sonoma:  "5a5d3659bbd5a9f9e4a8cc0f3ce1fe654d998b32fc1107be5ddc770c07ab42bc"
-    sha256 cellar: :any,                 arm64_ventura: "a0147f796de5f44f49105250f7c44f37e75705e541201bd9ac40bae076a961b9"
-    sha256 cellar: :any,                 ventura:       "ee9e31fd90e3f94b13b2dba5fba52ed5f2ccf8c3ca2873ce8aeb1643c2d6ce92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60c0ce61c254bb2cded8154ff6e65a1749ebb28155e67d1126e6673894049b61"
+    rebuild 20
+    sha256 cellar: :any,                 arm64_sequoia: "5bd6a6924d865a5435d04d5dd3a277cc67a0df3d7912482f1ed264656c6a92f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "11b5bc026955aeda0bf30b64346cb5c4a6bab0b757956b2f6a2401961db7644f"
+    sha256 cellar: :any,                 arm64_ventura: "43d911662b870186a2a0c489988e1f8abd65fa17a874815898a2824c8df1b8b3"
+    sha256 cellar: :any,                 ventura:       "36ecd2a4989ef13aa6982464ccfb79662d0fe3735cd82450ef61c446ac22d074"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60bf3bfd7cbb08485f0445155d7e3b23f4386273ea6da5f32bf16a6d2b28b488"
   end
 
   depends_on "automake" => :build
