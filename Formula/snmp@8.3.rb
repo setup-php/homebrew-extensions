@@ -8,8 +8,8 @@ class SnmpAT83 < AbstractPhpExtension
   init
   desc "Snmp PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://www.php.net/distributions/php-8.3.19.tar.xz"
-  sha256 "976e4077dd25bec96b5dfe8938052d243bbd838f95368a204896eff12756545f"
+  url "https://www.php.net/distributions/php-8.3.20.tar.xz"
+  sha256 "f15914e071b5bddaf1475b5f2ba68107e8b8846655f9e89690fb7cd410b0db6c"
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
 
@@ -20,11 +20,11 @@ class SnmpAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "64f1bfe7ba11e4ad81e456edae02832594f7ccbfbdb11663d5e7cbccc655ca6a"
-    sha256 cellar: :any,                 arm64_sonoma:  "a70fcc8360bcbe97f7d72a2f1ad9231d467a0ca3ef6091979501574317c122aa"
-    sha256 cellar: :any,                 arm64_ventura: "e78573ed3eb7c2bf759eac19a1624e62c7142243aea8d5ded92852644dfc86e2"
-    sha256 cellar: :any,                 ventura:       "6920e993f0eee709e48ad581c83700c73ac818f7b2760fc84e827744d8b66a83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c676e2379e15804ab05a4926b4566c55be34798aa455c2c7bed7684e76f036ca"
+    sha256 cellar: :any,                 arm64_sequoia: "d2af9f5d4e38243a3a0e0350433dd248e6e559065f342fb50de3af4b5131baa6"
+    sha256 cellar: :any,                 arm64_sonoma:  "ecc540802abaac017b154a89f4d06cc966eee0a50cb0110bd3ef16c7b7992d26"
+    sha256 cellar: :any,                 arm64_ventura: "879a5fa339268110696dabbe6a1579a0556ec8470e454d96f0eea7c14ac3fab1"
+    sha256 cellar: :any,                 ventura:       "258b0d0aac62f8c633c1261c125cc5ac3bf7d7a86789029ad45636e8450917f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03f3813bd880f2c9c5c90caf0dcd0b67d2b3598d56965304240bb8cbf226b1bc"
   end
 
   depends_on "net-snmp"

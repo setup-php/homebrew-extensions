@@ -8,8 +8,8 @@ class ImagickAT82 < AbstractPhpExtension
   init
   desc "Imagick PHP extension"
   homepage "https://github.com/Imagick/imagick"
-  url "https://pecl.php.net/get/imagick-3.7.0.tgz"
-  sha256 "5a364354109029d224bcbb2e82e15b248be9b641227f45e63425c06531792d3e"
+  url "https://pecl.php.net/get/imagick-3.8.0.tgz"
+  sha256 "bda67461c854f20d6105782b769c524fc37388b75d4481d951644d2167ffeec6"
   head "https://github.com/Imagick/imagick.git"
   license "PHP-3.01"
 
@@ -20,23 +20,23 @@ class ImagickAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 8
-    sha256 cellar: :any,                 arm64_sequoia:  "ff450ca52e3b80578cf5cab745d2cfec21115907253822a7a38bf00434868f25"
-    sha256 cellar: :any,                 arm64_ventura:  "e80a50469a1fbbef80fa656fe3134f76e6492bd2ae149412dea5096849540d90"
-    sha256 cellar: :any,                 arm64_monterey: "64b4a0fc45b93167ccfb03d5a6b810ee0ba7780b6e21a04793cf15b016ea16d7"
-    sha256 cellar: :any,                 arm64_big_sur:  "99320e508983dd3eac8dec25bc912b0aa5756443ac202449a8706e59a3d80726"
-    sha256 cellar: :any,                 ventura:        "36ebe482a5db9aa51b5268d322b86883a8f382647f7e6bdb72d4b39a72b9986c"
-    sha256 cellar: :any,                 monterey:       "0ede2643f690462b3cf9055439ca467a6daa336a55259e5b0382325ef4143603"
-    sha256 cellar: :any,                 big_sur:        "15040b85b36062717e18c28cb8e2458ac4ababfdcc8c7483f42af674c2d04603"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ecd387ece0560314ed619f83fb92f08064fde61c174c6f6198ed53acef068f2"
+    sha256 cellar: :any,                 arm64_sequoia: "0c7f91ec44ccab7b9d04c9416c5f3586a87ac48ffdc34bb1856c20c147afc0e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "2f9d83549371dd09faab749ee430f954628432d9a201a8e1f0014f94dd0f2157"
+    sha256 cellar: :any,                 arm64_ventura: "7c022777f057e8548da54288811e80125875a2a5be370d16be3789c7763dea61"
+    sha256 cellar: :any,                 ventura:       "4b9bc8c92fab74ee07da2ff16348bbae32d36ba4cb610b0c0f9df3ade6fbebee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b17afd2255877c6b8c514ebaeef140d5b9a7afa920e5d83e80643f5415df5b09"
   end
 
   depends_on "imagemagick"
+  depends_on "libomp"
 
   def install
+    args = %W[
+      --with-imagick=#{Formula["imagemagick"].opt_prefix}
+    ]
     Dir.chdir "imagick-#{version}"
     safe_phpize
-    system "./configure"
+    system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
     prefix.install "modules/#{extension}.so"
     write_config_file
