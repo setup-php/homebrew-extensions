@@ -8,8 +8,8 @@ class GrpcAT83 < AbstractPhpExtension
   init
   desc "gRPC PHP extension"
   homepage "https://github.com/grpc/grpc"
-  url "https://pecl.php.net/get/grpc-1.71.0.tgz"
-  sha256 "da142bcf578ec9ce5340fdfaf92633f6589b89885bbf77c5910fd89e244aa4c2"
+  url "https://pecl.php.net/get/grpc-1.72.0.tgz"
+  sha256 "715fe230c0b185968e92f8f752d61a878f9eb5346873848e47ff65d0af6947dc"
   head "https://github.com/grpc/grpc.git", branch: "master"
   license "Apache-2.0"
 
@@ -20,11 +20,11 @@ class GrpcAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "058cefa30b439aeb981ffac2ef4c76ed70adf8cd5181557d63349f861ed8c7c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d030b60697d46bb2f45f4a813a160896ee62ef6223293b028137cfd8077850bb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a41c79c1c0ad7157842600d437466fc294ddeb0fc7a2c6e210b42455f2dbfcd"
-    sha256 cellar: :any_skip_relocation, ventura:       "e9595ae2f93fb8fd57e2ae62bd192f52845b25aa0f27862bc7fa5ad65cce71c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a73ded9c2a610e4b9d90cba93f81d0d21669c184406343b61624d8cc3ff13f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f35a9b3e9b9b0ea12cfbf154fb81eef0a9bd3dba73878646474e8bebfda4b717"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d84cb12f7b6914025ea895530b02358e6221e6d9a82dbfb1256a8245b210fc3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d2dea4a6156e871c30b5625d79d95a2932218bef2890dc6904de8d97284d1eed"
+    sha256 cellar: :any_skip_relocation, ventura:       "bfbddf2269d4d1cb0b02b019c333471e3967b62c2d5ea5f5b0c24c952076be6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5715b44a17df180076b3a6929861373855eccdfc17d9a58d940d383098cf28e1"
   end
 
   depends_on "grpc"
