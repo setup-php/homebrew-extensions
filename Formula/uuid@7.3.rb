@@ -8,8 +8,8 @@ class UuidAT73 < AbstractPhpExtension
   init
   desc "Uuid PHP extension"
   homepage "https://github.com/php/pecl-networking-uuid"
-  url "https://pecl.php.net/get/uuid-1.2.1.tgz"
-  sha256 "2235c8584ca8911ce5512ebf791e5bb1d849c323640ad3e0be507b00156481c7"
+  url "https://pecl.php.net/get/uuid-1.3.0.tgz"
+  sha256 "b7af055e2c409622f8c5e6242d1c526c00e011a93c39b10ca28040b908da3f37"
   head "https://github.com/php/pecl-networking-uuid.git", branch: "master"
   license "LGPL-2.1-only"
 
@@ -20,11 +20,11 @@ class UuidAT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "0f0530cd6fa08293b2aa625d3baf4f98a94ce09acea024b07ededb108f330fdd"
-    sha256 cellar: :any,                 arm64_sonoma:  "143428a80af66e92b3990b5488128c66b4d6dd9cad6222392b25e9afb356048f"
-    sha256 cellar: :any,                 arm64_ventura: "9a3da331297a73b9f06950b294505386e578f41f443d9252507a9dc6fc6c38cc"
-    sha256 cellar: :any,                 ventura:       "650ce5110599ac9487fbd8ca20b37c5895402587ebe462fc987fce7f283d935a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f58e6985bb8fafac617fc94994fb337b24237f49e8c43fce066e339808c9fef2"
+    sha256 cellar: :any,                 arm64_sequoia: "e09347890454e3105d49bd7b99acc62392bb2340a0bdd88d532054cfa580a1fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa37c7bb5c97035798a12a764527666aa376dab3cd87689b8b3a4af468b369c2"
+    sha256 cellar: :any,                 arm64_ventura: "046c261913f084fd94f9398128b548cee2fe9bfa1b0c3df28a3aa104f157fe92"
+    sha256 cellar: :any,                 ventura:       "e75aeb44e8a65a7b4082c7e6774287e2bf416a60bd0c91b6f657f01236052aa0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1fd610f20f3efcf4627ae3369f0b17fa00bc27fa5256100a01f6afaca7a00c6"
   end
 
   def uuid_dependency
