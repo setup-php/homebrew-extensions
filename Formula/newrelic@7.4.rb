@@ -8,8 +8,8 @@ class NewrelicAT74 < AbstractPhpExtension
   init
   desc "Newrelic PHP extension"
   homepage "https://github.com/newrelic/newrelic-php-agent"
-  url "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v11.8.0.22.tar.gz"
-  sha256 "8a02436a6ab5ad395e7a200c19fad23217fe72f2429da8faf0a292935a04e757"
+  url "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v11.9.0.23.tar.gz"
+  sha256 "2a1481794a580dcd19a00ccd6b82ff56e1fd2acc31dae8d0306d2990afe5fe8e"
   head "https://github.com/newrelic/newrelic-php-agent.git", branch: "main"
   license "Apache-2.0"
 
@@ -20,11 +20,11 @@ class NewrelicAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "b1a13fe24254f2fbf2bff984421c31f6fd51518c0d6da7fa82efbcb593dd9d8c"
-    sha256 cellar: :any,                 arm64_sonoma:  "9edc99b1f9c2b19cdffb29c1833c5a3c60642a9a21c687d99e9e9581be4a4a23"
-    sha256 cellar: :any,                 arm64_ventura: "814435c3da016d707bca2dc66149f3d06f2af8da95201a3e9c0167b1b4a45f2c"
-    sha256 cellar: :any,                 ventura:       "f6510d2d2761d604c192c2100effaca68423264281999c12e67f64fdd4e69728"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f78de4e3cc01666ad714cf9604ef2b4494e3b2fcb2fe9078d964b788cedc3826"
+    sha256 cellar: :any,                 arm64_sequoia: "d70fde47b26ff5624ebc960532bc4b874beb66eaa06965b897beda58c7e91dec"
+    sha256 cellar: :any,                 arm64_sonoma:  "325055c019d2082bc393bed23ba86801a2249f9038879b9228e4ed177f257f2c"
+    sha256 cellar: :any,                 arm64_ventura: "3a9cf8c430cd785545579114afec4b296401f69ba5aa092f09fadaee3265e73d"
+    sha256 cellar: :any,                 ventura:       "cb527efcbfbf2e865e11803ecc96b13141c8ee48512c4cd601086f6fa253ad5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3f188ad23a18fd4dbd745cd5285cee0daf679d074911ec130063f3f6e82056a"
   end
 
   # for pcre_compile

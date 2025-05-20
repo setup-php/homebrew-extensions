@@ -8,8 +8,8 @@ class XdebugAT80 < AbstractPhpExtension
   init
   desc "Xdebug PHP extension"
   homepage "https://github.com/xdebug/xdebug"
-  url "https://github.com/xdebug/xdebug/archive/3.4.2.tar.gz"
-  sha256 "3659538cd6c3eb55097989f40b6aa172a0e09646b68ee657ace33aa0e4356849"
+  url "https://github.com/xdebug/xdebug/archive/3.4.3.tar.gz"
+  sha256 "988f518407096c9f2bdeefe609a9ae87edac5f578ac57af60f8a56836d1e83a8"
   head "https://github.com/xdebug/xdebug.git"
   license "PHP-3.0"
 
@@ -20,11 +20,11 @@ class XdebugAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 arm64_sequoia: "0fb3306ed357842851dd87c4f3dacd41f54639205782c88b649e0d497c49568f"
-    sha256 arm64_sonoma:  "117e2ce0259c9aea96ffc4e351d27c1621ed4addfcf11c73514334745c8b1ad3"
-    sha256 arm64_ventura: "12d70f976919637312ad0eb9c652adf575a961a7cb4bfa94b01abba25b3846f8"
-    sha256 ventura:       "22265e5c49992c4abc17cfe531317b28814fcc52868422402444ba28adb64aa9"
-    sha256 x86_64_linux:  "0a42987b9ac7244cbb75e31b0d97c71933a648521ed4dbadbc4042ff401af991"
+    sha256 arm64_sequoia: "fd329733af65d1abc24e30b635360b5a51c2d18749b417e8f7acbe0034a96281"
+    sha256 arm64_sonoma:  "62551fafe8a1cf78fd540c8d8e34bab90464d6b83ac124d91b58bcdd23f5096e"
+    sha256 arm64_ventura: "03f0e8937e6597675b4f5222357342515a0561656742b93bcadd45e92e3df1bc"
+    sha256 ventura:       "ff5ec7f87551c4e9080400b4d23f947c3ce7a546029bdbb24f94fc6d05a7f3d9"
+    sha256 x86_64_linux:  "3292a70028c44780a0655f77f1256eab008f52951ded19a911e58c474da8768d"
   end
 
   uses_from_macos "zlib"

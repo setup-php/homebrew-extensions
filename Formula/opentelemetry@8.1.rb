@@ -8,8 +8,8 @@ class OpentelemetryAT81 < AbstractPhpExtension
   init
   desc "OpenTelemetry PHP extension"
   homepage "https://github.com/open-telemetry/opentelemetry-php-instrumentation"
-  url "https://pecl.php.net/get/opentelemetry-1.1.2.tgz"
-  sha256 "43000b9b95d1c10a072a4dce631628dbd8e48af5cac6cd6cbe3b0649ed5fd2d6"
+  url "https://pecl.php.net/get/opentelemetry-1.1.3.tgz"
+  sha256 "8371225bbc4dbd6ba3e966b1588c22c81c6a87fcbece64cd2b3294cc03b2885d"
   head "https://github.com/open-telemetry/opentelemetry-php-instrumentation.git", branch: "main"
 
   livecheck do
@@ -19,11 +19,11 @@ class OpentelemetryAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c40f580dc2c1de9f5cd0f33707e580a7f8347c7aecfe91a0f6c186637e22cbd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fcd494c54c7e24e1e1920328b1a8aa72247e8f40d1002af60076a25552ebaa53"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3ace21c6e5f87f907f50f51e4793c3c300b6fefd74bcbce9db718fc321d103b7"
-    sha256 cellar: :any_skip_relocation, ventura:       "9d25da9d92660343ef4cece87d0e21d808349f83212e2e738be9692c46e4a828"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64c1d6512872f216c8edfd169b4ead9c3fa997243c4ef838fd9691772200da18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "177d23ffae9eb6592fd3f9f3181375635ff9aca5d046d328c9a19406ba106c4e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7fc40607f9d8326707f8b2871ba1731373657c0f8242386b6f0eb30b9272946a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f0c5d9112448dccd032e0b3f67016defcccf0c08776fcbd3fa188a2f3b80d50b"
+    sha256 cellar: :any_skip_relocation, ventura:       "5df64801835d4c5e40c3a3906d3e41bf75885e9ea962d9bee8156644c32f471f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e0af7339f7d64f807e32467695e528960064a09332b1ffac5a7bc49e3d64cdf"
   end
 
   def install
