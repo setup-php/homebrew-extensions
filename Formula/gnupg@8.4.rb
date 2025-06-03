@@ -8,8 +8,8 @@ class GnupgAT84 < AbstractPhpExtension
   init
   desc "Gnupg PHP extension"
   homepage "https://github.com/php-gnupg/php-gnupg"
-  url "https://pecl.php.net/get/gnupg-1.5.2.tgz"
-  sha256 "ad57aa23b3aef550fa4deddd003ff5322b886d55a67d1b020f5682ab829809fd"
+  url "https://pecl.php.net/get/gnupg-1.5.3.tgz"
+  sha256 "c1555e0c86a7f6d95141530761c1ecf3fe8dbf76e14727e6f885cd7e034bdfd2"
   head "https://github.com/php-gnupg/php-gnupg.git", branch: "master"
   license "BSD-2-Clause"
 
@@ -20,11 +20,12 @@ class GnupgAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "6bee6944c34814e3416c16faa3870adf7ab4453d056e15d227d961544078aa3a"
-    sha256 cellar: :any,                 arm64_sonoma:  "84351080c259d20eb0c74730718a4d59c14e831ef391a73646c7f614c7aac434"
-    sha256 cellar: :any,                 arm64_ventura: "3561feca230a317e5a2db03efd009792b5d79ca1ab0d410049d14d4ae5b86434"
-    sha256 cellar: :any,                 ventura:       "a909954fbc07afe337f489c5f0eac38eabb924abc7d295d291e36fa87b4b250b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5620bd549db4f4c92e9e900aebc5673ab4ed0f4fe789a785bd76251955966c6"
+    sha256 cellar: :any,                 arm64_sequoia: "d71f59ffe5fe2b7ddd55bdf3f166ff75731b93b67d96dcec842c9031e277ae9d"
+    sha256 cellar: :any,                 arm64_sonoma:  "ff71e0f144223231d88506f4458371e752c528e9e70cf16608c74e3956124f74"
+    sha256 cellar: :any,                 arm64_ventura: "b7132fadae9b73196f33b90268bc0726b6ae27a69d65e796f2e20182e31e8748"
+    sha256 cellar: :any,                 ventura:       "311b06ca19fb6597a8c7c0bb3319ab574e6560a3f2854e903c2fa36dccbd36fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "496ea40af772c467fc26468cb8e58340ca2f3b40d19b9a5c2b925376347a6668"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36e2c2e76192dcf9d8267dc7f353ba02f4d4ad20f261b04cc237a8682e5d8886"
   end
 
   depends_on "gpgme"
