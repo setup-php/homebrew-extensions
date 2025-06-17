@@ -8,10 +8,9 @@ class Mongodb1AT82 < AbstractPhpExtension
   init
   desc "Mongodb PHP extension"
   homepage "https://github.com/mongodb/mongo-php-driver"
-  url "https://pecl.php.net/get/mongodb-1.21.0.tgz"
-  sha256 "336506cfd52a878c29bf7e9fb99ff70054ab5efef19ab063c2d28e3889fdb557"
+  url "https://pecl.php.net/get/mongodb-1.21.1.tgz"
+  sha256 "357e1f4f6b9f6f6970789f5186467da1960dff2db2a8d6474f69ad51a37b5f72"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://pecl.php.net/rest/r/mongodb/allreleases.xml"
@@ -20,12 +19,12 @@ class Mongodb1AT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "728eb2823003ceb05b946066bbd85bc2c18e13175a1cc30248f6d64c49a892eb"
-    sha256 cellar: :any,                 arm64_sonoma:  "ecb228f638ffa328471ff1a29019d154bb034a8d93d34717d0abbfda789f8fca"
-    sha256 cellar: :any,                 arm64_ventura: "95885e704a4bd880f351ef1a948f0fd1ca226b60225108dd1f4aa150e1520c97"
-    sha256 cellar: :any,                 ventura:       "982338986f8b6b994e514a8a80c1f7db8dd220756b74972705ea37cfcac99194"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1887e413519d1b748c6e7b848e0606d10ef2437ab876aa651e7a6aee1cd7adf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0030a9303d84d71d988a7036c34c2fa4d601a4050978ac97076996c2569874d9"
+    sha256 cellar: :any,                 arm64_sequoia: "b91bf4f33326c341ecad0a473275ac33070f4439b74692e1dcfcd1e31dd8ccdb"
+    sha256 cellar: :any,                 arm64_sonoma:  "ccd65a4a5b96dc1f264d2add7c03a48fa5c9492ec76bdc57ecc8258b9975a3ea"
+    sha256 cellar: :any,                 arm64_ventura: "6fc989a2770856b666d8661c235f775d5e434993df787914a109efe5aeb86bc5"
+    sha256 cellar: :any,                 ventura:       "a316b42cf8c689e5ea113af9194523baa4471cfd457672d109d096eb02d520f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "539a515d28db35f5a9bbe128d376850abe0d385fc6f9f4676b577570e6429c0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "803b723cca4547fb72d03b1d8ade6f12ccc44c59b666d8e6b93e578d23362921"
   end
 
   depends_on "icu4c@77"
