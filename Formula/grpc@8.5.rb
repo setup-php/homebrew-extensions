@@ -8,8 +8,8 @@ class GrpcAT85 < AbstractPhpExtension
   init
   desc "gRPC PHP extension"
   homepage "https://github.com/grpc/grpc"
-  url "https://pecl.php.net/get/grpc-1.73.0.tgz"
-  sha256 "63959dc527c60cdb056842c5e5ebb45b507452bb121653604ed94c1c23972c7d"
+  url "https://pecl.php.net/get/grpc-1.74.0.tgz"
+  sha256 "972ce8a989f2c15a951444950c1febe84eb88e59aeaca29d96e005fe55df1fc3"
   head "https://github.com/grpc/grpc.git", branch: "master"
   license "Apache-2.0"
 
@@ -20,12 +20,12 @@ class GrpcAT85 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e38451e327c8a0a333a67515697ad4c419d95e900cde391abf62711cb861c578"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9191084ba5904db8dfb3887eaa0bde851f772e02e3a90cee6c3e874bab8ec353"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "413b335f599208c71676028cb6ee9faebadf86ae792464b18447034adc529da3"
-    sha256 cellar: :any_skip_relocation, ventura:       "c6a267ec22644966d12da570fc27644f10adf6c07c610badd6fd56666b0dec9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60bff95123e1a35115592b3e5f596b78e20d218412baeb94ee64210e6089f4fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "673af68abd2aa64296061be362186daa7454500c983c875300ed549ea9a0f017"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a669e92fddbe42253da8a0774f4def3d81e86dcf8d811c7e27e92110aaf4ca3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ff7923e6b2b5de921f84c0af21c8da53511f423450159b26ffb81250d113201"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d2f63b2a0f4b369a728a69a7997fff56c491269c5badb989a8be377eaf44a9c"
+    sha256 cellar: :any_skip_relocation, ventura:       "b348ed00d8f10f5bbf80fb844d097fae47c1bf3e55fb361b6bbfbf3a61716d18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3213944356291cebfb4eef9992174922db5dbce566b5c6b2c3f449b353732a73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "462abf834e767af964b0ed363d66b09505a409e06e7b60425c4e5a37503db00c"
   end
 
   depends_on "grpc"
@@ -33,6 +33,7 @@ class GrpcAT85 < AbstractPhpExtension
   def install
     Dir.chdir "grpc-#{version}"
     patch_spl_symbols
+    inreplace "src/php/ext/grpc/call.c", "zend_exception_get_default(TSRMLS_C)", "zend_ce_exception"
     safe_phpize
     system "./configure", "--enable-grpc"
     system "make"
