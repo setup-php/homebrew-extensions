@@ -8,8 +8,8 @@ class SnmpAT84 < AbstractPhpExtension
   init
   desc "Snmp PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://www.php.net/distributions/php-8.4.10.tar.xz"
-  sha256 "14983a9ef8800e6bc2d920739fd386054402f7976ca9cd7f711509496f0d2632"
+  url "https://www.php.net/distributions/php-8.4.11.tar.xz"
+  sha256 "04cd331380a8683a5c2503938eb51764d48d507c53ad4208d2c82e0eed779a00"
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
 
@@ -20,12 +20,12 @@ class SnmpAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "37bb447a1bbf07dcbcd2f55a2dadb9af82058d35d8d431b491b7abd7a11a4ce2"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ba349e0b7af647b31974b902cf355cb4fd3cb17d6efcda0dc49291cc9e93ae2"
-    sha256 cellar: :any,                 arm64_ventura: "5588173ad97b717eb5fb2211da0ac614dafe3966bcf17e43383ea2bd5a60c3c8"
-    sha256 cellar: :any,                 ventura:       "91511152c4d932b4d967a1b7e51681d4520e7706f0dfcd41e83f6128c04e0f94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29c7e24f6919882410963e5da874f32dda9770c0897c8119386b305ed05f6176"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efb85d2ed930691527a6ea2391b99a727f0f277f530dbe3dc72eb2a4b9063846"
+    sha256 cellar: :any,                 arm64_sequoia: "07fc4c3102a96acf698da53d2ce51bfaf7729d9ac33e74accae8780746c718cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "70dd9a91ea1d7d97e65f98a43d872897068fc99017caa6940947a1ea5c8baf10"
+    sha256 cellar: :any,                 arm64_ventura: "9546aab3bb2c9af3f979959a736ed27c56b24d94479b46d0de57da33e4357f42"
+    sha256 cellar: :any,                 ventura:       "5f064dd35464f36d6df481bafa4fd0d2ebffb5c648dda5844539eeeef83bdf4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "01c47e2efab11e2418ffe18e57cd50dbf3b0e03fc842dbbe6ea0a26595dd3064"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80b7b974ff1686fcead429bdabe932130aa0fa0b14bb2c3a43fbfe33581308eb"
   end
 
   depends_on "net-snmp"
