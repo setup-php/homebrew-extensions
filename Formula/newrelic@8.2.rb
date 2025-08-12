@@ -8,8 +8,8 @@ class NewrelicAT82 < AbstractPhpExtension
   init
   desc "Newrelic PHP extension"
   homepage "https://github.com/newrelic/newrelic-php-agent"
-  url "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v11.10.0.24.tar.gz"
-  sha256 "eb9b68f976ae88c642f753f1c51b4813d0fd63c616eb2f96ec94f7efd50c2244"
+  url "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v12.0.0.25.tar.gz"
+  sha256 "43310e8999ee11ff97e8573eb5d1e6f9ffbc8caf9c76960cdc732f413353276f"
   head "https://github.com/newrelic/newrelic-php-agent.git", branch: "main"
   license "Apache-2.0"
 
@@ -20,12 +20,12 @@ class NewrelicAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "137ce52fb5462c6b49086786aa04ad24f059119ff882cc083eaf8ec2afb10a39"
-    sha256 cellar: :any,                 arm64_sonoma:  "43f2f03d5ea2dba2b5b605603c4f092d02b1222dbdc0ad099d6546c50ba5964c"
-    sha256 cellar: :any,                 arm64_ventura: "a2cb8077832ef372c512bc093e0839e91ed397f5fc3c01cf9e4455128f7f8222"
-    sha256 cellar: :any,                 ventura:       "cf933e71a5c989ecd375d8ce327d03ed5cecdc391d5ffcfb3fb2c929a13601bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12aa8d44397198161b222026e1dd1598092052b65d407a1cf208db60e6468b04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fa8122d98c5b4311e038ceab529c95b68848e6efa519de95cb68ea8686c5747"
+    sha256 cellar: :any,                 arm64_sequoia: "aa0588bf64de1d52fd6dc0cbce36c7f23c182d94865e64e431d77a06dd0e69f8"
+    sha256 cellar: :any,                 arm64_sonoma:  "a854c6b3a08fcab35d91b3c3213ce4afc8f8e8e9353c0bf91cf449d417ebb8ea"
+    sha256 cellar: :any,                 arm64_ventura: "8f08febef9c4a0456b555bbb015a7a0975b48c71f6697af20ce6515daffcfe18"
+    sha256 cellar: :any,                 ventura:       "85015ffdb8bb2798edc7771223a92f85b6a2130c0afc83619ed38f5570e46ae6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c15b87bcb6e5cc3cf1e787a065758667693cefc398c4993ca51989fabae577b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fdfbc0e11fac97efbf983827865474bced1c41a9da5aa4b887de5653beb658b"
   end
 
   # for pcre_compile
