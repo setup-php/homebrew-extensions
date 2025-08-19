@@ -8,8 +8,8 @@ class ZstdAT81 < AbstractPhpExtension
   init
   desc "Zstd Extension for PHP"
   homepage "https://github.com/kjdev/php-ext-zstd"
-  url "https://pecl.php.net/get/zstd-0.14.0.tgz"
-  sha256 "207a87de60e3a9eb7993d2fc1a2ce88f854330ef29d210f552a60eb4cf3db79c"
+  url "https://pecl.php.net/get/zstd-0.15.1.tgz"
+  sha256 "5dd4358a14fca60c41bd35bf9ec810b8ece07b67615dd1a756d976475bb04abe"
   head "https://github.com/kjdev/php-ext-zstd.git", branch: "master"
   license "MIT"
 
@@ -20,12 +20,12 @@ class ZstdAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "fbbb8b9947b9632e161266ebb1b07c3c7a11bafe44fdd39c13b7322e11597f65"
-    sha256 cellar: :any,                 arm64_sonoma:  "5328e0a72aa6342cb96a11520c22b902860b58804792c5c26cc151be5e582c05"
-    sha256 cellar: :any,                 arm64_ventura: "7348a46fbf23d52bf9fcc8cced2276caa3de76ef40b122ab4a860bca49664cc3"
-    sha256 cellar: :any,                 ventura:       "387b628e256ddd1577811337892b3722760e738a8108b146fdb6f114c28e3d7d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31f13e27d941b6c212fbb829fdfab36be62cd777c8bbe1dc0bee3bc6693cefa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66645c630f6c5dcf579bae788dab8d43f3d276900dcda333ad80f41e120d1cd0"
+    sha256 cellar: :any,                 arm64_sequoia: "00d93da63b731ea446545a19611da8a010403a326965b7af8f2498bf507ce70e"
+    sha256 cellar: :any,                 arm64_sonoma:  "246993d5834851439c0b4175e32c813173ec21344bb1c4cbc66a3e3f5a7b6350"
+    sha256 cellar: :any,                 arm64_ventura: "a262615a370935f01d595fd13e56447c810fd91187e7fd8eaa8f76d298eeaa36"
+    sha256 cellar: :any,                 ventura:       "c9660485b5d039cef89ba7d5db156d75fe9dc09655a5f91a963257c0a095a585"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea9c027997c290cee722d0d5ea8072777bb6e386da03f0ce2068d9a1e7090876"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "557baf32ab43ea086da58b092b5aa06b64aae9d33072a0cba6008d702d72cac5"
   end
 
   depends_on "zstd"
