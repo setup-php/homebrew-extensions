@@ -8,27 +8,26 @@ class XdebugAT85 < AbstractPhpExtension
   init
   desc "Xdebug PHP extension"
   homepage "https://github.com/xdebug/xdebug"
-  url "https://github.com/xdebug/xdebug/archive/cd952dcb5e2cc5c1960f82c0485e1f85e8c96d67.tar.gz"
-  sha256 "cbefae0ebf839603a339f87d28c96920e542f541c61dee9642c3df94b5f0f54e"
+  url "https://github.com/xdebug/xdebug/archive/c8cdfe2f927c6dec0c6e79e73807f86694b0302e.tar.gz"
+  sha256 "6efad819e0494c9106ea7503bd6811daddc77aed76b05886dce325120e92293a"
   version "3.4.5"
   head "https://github.com/xdebug/xdebug.git", branch: "master"
   license "PHP-3.0"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256                               arm64_sequoia: "69a3beaddd8c02000ca29f5651479ed2172d4db66832b73c474ef5a5382b2fa1"
-    sha256                               arm64_sonoma:  "39e9a0b1c5aa991b5573580d31afa03823e0a2cc4e803f5111dc827ab636e73f"
-    sha256                               arm64_ventura: "7c08625ae792576f8c86e8c2fec4dc46149caf94dfbdea1bf90b32cd9ad6e04f"
-    sha256 cellar: :any_skip_relocation, ventura:       "c4b321974b5b60235db3013c2819ff9582295a0cc126a042509221d9182fd7aa"
-    sha256                               arm64_linux:   "2c0c6283345a4cfa21bef4fe5b34fe1f897c9e4fa05849fd4c5c1f42449907b1"
-    sha256                               x86_64_linux:  "e95c7fabd5eb8bda91065905a274b9de723e4d07e3ec1af73055cf2172ece4ae"
+    rebuild 2
+    sha256                               arm64_sequoia: "7e5757ecbe7c6d6e58e624bbcb891a8a42814ac6ac0486a6aed549dfb22cd8d9"
+    sha256                               arm64_sonoma:  "3cb7ac8e7322ceeceacc19c0398341d008acc3e8bec15f3c085c53fedaa4e8eb"
+    sha256                               arm64_ventura: "3807722f7580a543333cbc49f6da2c7bdfd78d4dde761ccf5d10a1e64501f88b"
+    sha256 cellar: :any_skip_relocation, ventura:       "d5e2ee4277eb4c721d8d3f539070d65fbbaed9813d0b9b060aa0d3033c2e8712"
+    sha256                               arm64_linux:   "d76d367fd3d382805b3e85db631052ad91dd53959a7c8fe9d452db00b1b16caf"
+    sha256                               x86_64_linux:  "f44f5304b0f66d2958b5b59583010d4d3880103f48c55ac5cad364f1d8e67f8e"
   end
 
   uses_from_macos "zlib"
 
   def install
-    inreplace "src/lib/compat.c", "samesite_s,", "samesite_s, 0,"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"
