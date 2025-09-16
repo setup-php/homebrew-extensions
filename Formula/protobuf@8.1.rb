@@ -8,8 +8,8 @@ class ProtobufAT81 < AbstractPhpExtension
   init
   desc "Protobuf PHP extension"
   homepage "https://github.com/protocolbuffers/protobuf"
-  url "https://pecl.php.net/get/protobuf-4.32.0.tgz"
-  sha256 "4ae29e01061418df1b0b961f55f29561d6dc506ff9806117e8ae5d4ecf640ccf"
+  url "https://pecl.php.net/get/protobuf-4.32.1.tgz"
+  sha256 "cf434ae501ed65c7fa079ac882b0e0044978ceace5a3781e6780d547a559c776"
   head "https://github.com/protocolbuffers/protobuf.git", branch: "main"
   license "BSD-3-Clause"
 
@@ -20,12 +20,12 @@ class ProtobufAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55450058e7d23bde22b67974cbdeafa23cd158e9ec5502308d774e0a2699fb5c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7af86e464102ffa65f7ad6d0c04a27cdea3fa9177a8d5b4f3a99d42b6f995b59"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7333b46f4acf1613899a3dff3bc36c7f11812d1c9c9b7d5233fd6a24b95aad39"
-    sha256 cellar: :any_skip_relocation, ventura:       "2a90977203e61de102637f8de24d03e846ce26a551bca0216e1f5f18e6e5e5cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf82680feef2ed2b7112d4b0ec69a6075dcebcdca2be13044ebba9e27817f34a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11ddf6193d9374660391fcb9af40c7f54705ce526d66940d09734c587bb115cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9c60734d5db3641174fd7d46a9ea1a744e37832853d720513acbf15cc88b3be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd1ae1c26ebdba80cf433aff27d9afc789bbbad53defafc1f3203d9c8fb816d8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "46602e6cb0157c07bb7f09d7a3d08bc8e406934e9eaaec3d41ddec76738ed2eb"
+    sha256 cellar: :any_skip_relocation, ventura:       "c8f8dbead38eb144a40f0afa1cc1a0a515f0e0ff4bae08da0a2694951ffeb677"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68efc5e0503713bb21603874bb6d50b4fd0bddd87616a3aa0ee346966d8437c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d616938cfa88924e232f4c875f22b4eafd5fc5c35a3c733b760f6e10cf0d07da"
   end
 
   def install
