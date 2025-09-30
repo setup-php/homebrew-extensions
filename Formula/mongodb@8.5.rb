@@ -10,6 +10,7 @@ class MongodbAT85 < AbstractPhpExtension
   homepage "https://github.com/mongodb/mongo-php-driver"
   url "https://pecl.php.net/get/mongodb-2.1.1.tgz"
   sha256 "bea8eb86be7e301b1cd3935ee3ccfa052e410a7cfa404ae5ab4b11e4c99b8899"
+  revision 1
   head "https://github.com/mongodb/mongo-php-driver.git", branch: "v2.x"
   license "Apache-2.0"
 
@@ -20,14 +21,15 @@ class MongodbAT85 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "ce0fac0b2d248b234a425ebece0588fa5c26481b98eff7fb83874f178b0a6160"
-    sha256 cellar: :any,                 arm64_sonoma:  "62d6c61b400f66242eb028b2554d8422b1ea37d194dc4bc389f0f6872dc3d99d"
-    sha256 cellar: :any,                 arm64_ventura: "dfb6138a10c62e3725e06bface9f6537fddaa0e2ed988ba912b37ea55f0b969c"
-    sha256 cellar: :any,                 ventura:       "9d510f624b0c3da93023a197221a4b9e4a2924f87cd94af643808487ffbea392"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f09c7f021ccd3ccae0f60493c6373d29ab22c131455a777d67733f96cf944434"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34b009cf742ecc4225f9587ea3035b9db63a1fd4d9e7792f9e0f911a79d2d7b9"
+    sha256 cellar: :any,                 arm64_tahoe:   "d223743dc3be4a190bd35e5dc3ee14ee12a7e00a9a51e1eaaa9729ef342a19fb"
+    sha256 cellar: :any,                 arm64_sequoia: "6f68cc99d15c51218d7488f8815473c2fe6a2b52d3cca7407ef9f025f06c53f6"
+    sha256 cellar: :any,                 arm64_sonoma:  "8831736b4018e808390bd31db6185abadc2248589819f8b1485972fd5c8444b6"
+    sha256 cellar: :any,                 sonoma:        "f6328dee6abc00ab10d236faad89c6c4fbc8aff8fa8bb2d073c950e143dfe66d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "249eb2aab0c5b2fac0e25ab8bb7c4283ae2eac0830bbd8bd86a029e8d799b10d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa7e3923885c82392162a1c3a6cba97cdc2e0afb95940f664b9dce282cf0a46a"
   end
 
+  depends_on "cyrus-sasl"
   depends_on "icu4c@77"
   depends_on "openssl@3"
   depends_on "snappy"
@@ -39,6 +41,7 @@ class MongodbAT85 < AbstractPhpExtension
     ENV.append "CXX", "-std=c++17"
     ENV.libcxx if ENV.compiler == :clang
     Dir.chdir "mongodb-#{version}"
+    inreplace "src/contrib/php_array_api.h", "IS_INTERNED", "ZSTR_IS_INTERNED"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-mongodb"
     system "make"

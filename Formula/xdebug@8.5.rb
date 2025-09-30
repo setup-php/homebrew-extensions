@@ -8,21 +8,21 @@ class XdebugAT85 < AbstractPhpExtension
   init
   desc "Xdebug PHP extension"
   homepage "https://github.com/xdebug/xdebug"
-  url "https://github.com/xdebug/xdebug/archive/09f1713aa69c95d3cbe4644c30fcd2fd60ae8d90.tar.gz"
-  sha256 "bb3c3642f1b7903034b5f5d14437887b56e9a7c50cd01d46e4c6f78695ef0c1f"
+  url "https://github.com/xdebug/xdebug/archive/86727b0b05b5d0a9c4fb85021f05d7931e2c3a35.tar.gz"
+  sha256 "068b206f63cbb1f9512b9d16d349bbf11d266e84ce7609496b16105c380ee9fb"
   version "3.4.5"
+  revision 1
   head "https://github.com/xdebug/xdebug.git", branch: "master"
   license "PHP-3.0"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 4
-    sha256                               arm64_tahoe:   "9e063ee5c00278efaf7a3a3c99eff8fa1b414c9c86592d263c23ec57c1897fe9"
-    sha256                               arm64_sequoia: "8da84e94c39a58749bd9d9fef193a9f975871657a986800078041fa34841e309"
-    sha256                               arm64_sonoma:  "2639b6557e714d77211a659ec566ae376d7b52ae4a0d3be2701ec7e2291268ba"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e1d10a42252e7df007918e83921ee3db7c534217ff83dca96d908bead5177ea3"
-    sha256                               arm64_linux:   "24a32ef920ac637096fcc19e3b682f3186a6131952dbfa440afa360e32a6c209"
-    sha256                               x86_64_linux:  "fa5070abd0c322f6abd1cfa620c59db55a8137e273838a1fd9921e10372d8378"
+    sha256                               arm64_tahoe:   "d06eae296d4db49798d30d72936a90a56d1ec87b37502ddebcb01fbb3eb02b34"
+    sha256                               arm64_sequoia: "9ad2f4a02690276e6b36b314a712b048f0d691217e44e9bf605b886f67d64233"
+    sha256                               arm64_sonoma:  "aacd17477e5df78d9331fa69caa58185ead1536873e4154f257287df0590d799"
+    sha256 cellar: :any_skip_relocation, sonoma:        "41046a270b848b2394728b63d0f2f3bbcd1172912d56b266538b4abd8c3c59e8"
+    sha256                               arm64_linux:   "c8221df0a583b6330d1351333027f45f20b2a9a010f496de90983da69859ea91"
+    sha256                               x86_64_linux:  "a92873d722e678f88e4bcba94e2bd50ac21dc31115f48268dd5f362ea163b8fa"
   end
 
   uses_from_macos "zlib"

@@ -8,21 +8,22 @@ class SnmpAT85 < AbstractPhpExtension
   init
   desc "Snmp PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/php/php-src/archive/1ac68e7b079b33b012c9f69b986b31852370f2ee.tar.gz?commit=1ac68e7b079b33b012c9f69b986b31852370f2ee"
+  url "https://github.com/php/php-src/archive/0202124fe29ac8e03c2fd73668c603cca5202287.tar.gz?commit=0202124fe29ac8e03c2fd73668c603cca5202287"
   version "8.5.0"
-  sha256 "5c3b494034eb0aef6dbc1ea15a2245610008c8d5c12b54698e508b6e30cba88f"
+  sha256 "60e23f5b3f75fb9280d0a1a3a923841397e0ae921d4ea39ee0a51944a14a9251"
+  revision 1
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 44
-    sha256 cellar: :any,                 arm64_tahoe:   "4fa9d1cff76e910e55c3516837280a958c45cca6f3c57209383405732dd71f17"
-    sha256 cellar: :any,                 arm64_sequoia: "c826396e558febf56feba0cc1f501e33941b733742a47c646b69a36cc044476e"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7766accd2b37364abb7388bd144fbaf70bf283c1fd73f4fdeb3b810737a3a92"
-    sha256 cellar: :any,                 sonoma:        "07466614c012321d4d293ab59bff850bb5acfea3949b82fe81f629244c55552e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a15c20dc48593e5b02dd630af3f58b1b23d43227f8ee993e926882050c06fe3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd0615484f0f1af56001891de67fdc36cf7a9a2d36731d9937617040ed62b8ef"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b7a525e000dc72a5d9966187aa3a0563bba48e449bd5a95f0a8228956db1d80a"
+    sha256 cellar: :any,                 arm64_sequoia: "fd81349eaee2f7bf7c906f8f487de5d2916ad96e43af01ee290521f59876b655"
+    sha256 cellar: :any,                 arm64_sonoma:  "9d3b62b1bb3077165b2b5555e080f54fa72f6f51cd6037652376152dbe5241ea"
+    sha256 cellar: :any,                 sonoma:        "789a35f2b52c0890a3024ac13165af2ce3ba4dc8e0697a5f7d4d613da210c0d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5d4c2a12a8e435288020e79852c5275fad8a6b53a12ba68c2ad873e945251e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8e6dec5a0a7ec96273a1d7322c510a5ebfaaca86db3869abc3337accbf18584"
   end
 
   depends_on "net-snmp"
