@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '2-59/5 * * * *'
   workflow_dispatch:
+    inputs:
+      dry-run:
+        description: Inspect queued jobs without changing runners or launching hosts
+        type: boolean
+        default: false
   # Only execute the pinned controller, never the triggering run's code or artifacts.
   workflow_run: # zizmor: ignore[dangerous-triggers]
     workflows: [Managed macOS runner]
@@ -30,13 +35,11 @@ jobs:
       - name: Check out pinned runner controller
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: 9e9cfd70774aa3fee951845d653953a130873dae
+          ref: 174f2876719e3c003dc4221783e9d70c3e5a1037
           persist-credentials: false
-      - name: Maintain twelve reusable Namespace ARM64 macOS runners
+      - name: Scale single-job Namespace macOS runners from the target queue
         env:
           GH_TOKEN: ${{ secrets.RUNNER_POOL_ADMIN_TOKEN }}
-          POOL_SIZE: ${{ vars.HOMEBREW_MACOS15_RUNNERS || '3' }}
-          MACOS26_POOL_SIZE: ${{ vars.HOMEBREW_MACOS26_RUNNERS || '5' }}
-          XCODE27_POOL_SIZE: ${{ vars.HOMEBREW_XCODE27_RUNNERS || '4' }}
           HOST_CAPACITY: '12'
+          DRY_RUN: ${{ inputs.dry-run || 'false' }}
         run: python3 scripts/managed_pool.py
