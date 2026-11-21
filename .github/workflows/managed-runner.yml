@@ -1,0 +1,56 @@
+name: Managed macOS runner
+run-name: Managed runner ${{ inputs.pool }}
+
+on:
+  push:
+    branches: [feature/ephemeral-runner-pool]
+    paths:
+      - .github/workflows/managed-runner.yml
+      - scripts/**
+      - tests/**
+  workflow_dispatch:
+    inputs:
+      pool:
+        description: Prepared environment for one managed runner
+        required: true
+        type: string
+      image:
+        description: Namespace 4-vCPU/7-GB ARM64 host matching the runner profile
+        required: true
+        type: choice
+        options:
+          - nscloud-macos-sequoia-stable-arm64-4x7
+          - nscloud-macos-tahoe-arm64-4x7
+          - nscloud-macos-goldengate-arm64-4x7
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: nscloud-ubuntu-24.04-amd64-2x4
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - run: python3 -m unittest discover -s tests -v
+
+  runner:
+    if: github.event_name == 'workflow_dispatch'
+    needs: validate
+    name: Single-job ${{ inputs.image }} ARM64 runner
+    runs-on: ${{ inputs.image }}
+    timeout-minutes: 360
+    environment: ${{ inputs.pool }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+      - name: Serve one job and stop the host
+        env:
+          POOL: ${{ inputs.pool }}
+          RUNNER_REGISTRATION_TOKEN: ${{ secrets.RUNNER_REGISTRATION_TOKEN }}
+        run: python scripts/managed_runner.py
