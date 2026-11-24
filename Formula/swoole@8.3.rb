@@ -8,8 +8,8 @@ class SwooleAT83 < AbstractPhpExtension
   init
   desc "Swoole PHP extension"
   homepage "https://github.com/swoole/swoole-src"
-  url "https://github.com/swoole/swoole-src/archive/v6.2.5.tar.gz"
-  sha256 "8b8261162375a04a1fc58775824ca146ac1d1905c178fbb548381c27f2c343f5"
+  url "https://github.com/swoole/swoole-src/archive/v6.2.6.tar.gz"
+  sha256 "b0a97398d50dc9442d48a71238cafa5f75d2c53d2e35d12a59235f9d52dab718"
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
@@ -20,11 +20,11 @@ class SwooleAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_golden_gate: "b6dd2cb41ac667c523e2d5affccc831d743935453ced28c8d2be4fb815de112f"
-    sha256 cellar: :any, arm64_tahoe:       "c3911c0fd64a8dff93cf2d03321e0c9b07ea920c4dc59df6efbedc30143ac02b"
-    sha256 cellar: :any, arm64_sequoia:     "9dd3acc773db1d6a416152bd3f6503827548f46c5fd0881c0fe6303bb8cd535e"
-    sha256 cellar: :any, arm64_linux:       "eb000069ae55b9582b5e582c82dc25a12dafc4e49fac19323c9e63c2fa4f2140"
-    sha256 cellar: :any, x86_64_linux:      "0d5640fd10536fdcc6d15f3b861f750dc30e872f5594a3e80331059a12ae688d"
+    sha256 cellar: :any, arm64_golden_gate: "d3fe7f2aa7def9ade91fa1439c7391b8a44583e9456bfd1562a90214129a2865"
+    sha256 cellar: :any, arm64_tahoe:       "e0a80808cac5bcf9933bfa7f1f68f6fac6d66220339d8e8209999e71bae61a59"
+    sha256 cellar: :any, arm64_sequoia:     "3368ec985dcbf37266ff011ba0b6647d8b7d8e4494ab0b7442632b7e4ecf9ba0"
+    sha256 cellar: :any, arm64_linux:       "42a2a31238616b7a26a501e0039eaf494f6348a32ab387e986bed824a4914c08"
+    sha256 cellar: :any, x86_64_linux:      "6f72a2be737aa3abc0c3a620a542b1eaf0f67b1e57a40598c01381e9ca88d8b2"
   end
 
   depends_on "brotli"
