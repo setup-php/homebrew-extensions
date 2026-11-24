@@ -8,8 +8,8 @@ class MaxminddbAT84 < AbstractPhpExtension
   init
   desc "MaxMind DB Reader PHP extension"
   homepage "https://github.com/maxmind/MaxMind-DB-Reader-php-ext"
-  url "https://pecl.php.net/get/maxminddb-1.14.0.tgz"
-  sha256 "c06351f1360bd651057ea73e0186d8fec744292839a4b49c71ce886072c4fff7"
+  url "https://pecl.php.net/get/maxminddb-1.15.0.tgz"
+  sha256 "49412f02d31d28861f56c05f043ed21a1e8c444b53ac47292da502a4d1fdaa2b"
   head "https://github.com/maxmind/MaxMind-DB-Reader-php-ext.git", branch: "main"
   license "Apache-2.0"
 
@@ -20,12 +20,11 @@ class MaxminddbAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_golden_gate: "efbadb5561b5643ee5c492df30d6a7fc4d93fdad75f9dd34a7b985d8e9bf37f1"
-    sha256 cellar: :any, arm64_tahoe:       "f168b6bc9a9183f0da6e6fb113c16c18295c05fca721206447a873b28da4e5fa"
-    sha256 cellar: :any, arm64_sequoia:     "25ecee1277b15f5e8d6561db1d115e7dcb1eadf0bd2f00d2737cbbc58158e45f"
-    sha256 cellar: :any, arm64_sonoma:      "027c6480be7366e22780cf9c607909119af8f6faf98a3a973310a8101e6bb342"
-    sha256 cellar: :any, arm64_linux:       "7a3c24fd16a66d1cbdbb8b91ebae70c6ab8df7345e8a23fbe92cefec71307606"
-    sha256 cellar: :any, x86_64_linux:      "b31bff109c58507fc13922471d8d73be64f3470d7f3a76b75769167e21e00bdd"
+    sha256 cellar: :any, arm64_golden_gate: "4735084a0299da747275b44f9355d3024e2ff5952e01633e1e1706d304e36a1e"
+    sha256 cellar: :any, arm64_tahoe:       "e30f7e704d1c25b422b09d58ba00a331bbe56e433db5e1c7f3660adf8c38e3a2"
+    sha256 cellar: :any, arm64_sequoia:     "18217784b356827bbf5ac5548eb5db24f996c2f43434d563952a7689e02aa125"
+    sha256 cellar: :any, arm64_linux:       "e5c1be048321bf60420521964aee30a447652709090ecacd513b5002c2f610ad"
+    sha256 cellar: :any, x86_64_linux:      "101af4d0ba5a57266d51af41942d2a5c2fdcae6f33e2aaabe742a9dec412f5c8"
   end
 
   depends_on "libmaxminddb"

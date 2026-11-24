@@ -8,9 +8,8 @@ class MongodbAT87 < AbstractPhpExtension
   init
   desc "Mongodb PHP extension"
   homepage "https://github.com/mongodb/mongo-php-driver"
-  url "https://pecl.php.net/get/mongodb-2.5.7.tgz"
-  sha256 "078773856f4066b56738fc13950bb7ee16b5e66f727fb41d3fbec6043c78fd32"
-  revision 2
+  url "https://pecl.php.net/get/mongodb-2.5.8.tgz"
+  sha256 "64bcb151b4c5c3f17dc1dfd949a35aed2c10b6230332861a5ad7aa9cdff44b2a"
   head "https://github.com/mongodb/mongo-php-driver.git", branch: "v2.x"
   license "Apache-2.0"
 
@@ -21,11 +20,11 @@ class MongodbAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_golden_gate: "73be6962155a7c904d54e9125826e1d5f57661736048c4ba5e324d601ace946f"
-    sha256 cellar: :any, arm64_tahoe:       "4ab47a1bea2dc30dafc4ea4e2dfa7ecca2533d7e259ac51dd8e9c03ef0780002"
-    sha256 cellar: :any, arm64_sequoia:     "b4bdf0fa9279e30572655335766c7e6beabcc8ed303805ab0d0229ccc101f027"
-    sha256 cellar: :any, arm64_linux:       "c904087d8eb07c3d20f884227a11eec7b22842d5f17df648521e0c4df007a96d"
-    sha256 cellar: :any, x86_64_linux:      "4a4d6cee2f65b11fc5f53eca1eb88124484a437fc01116164a389a8143beb79e"
+    sha256 cellar: :any, arm64_golden_gate: "a028a9c9b141bfce0301384879cdf7e1c3d67a8bfe3562b6b4a582e381ab51fd"
+    sha256 cellar: :any, arm64_tahoe:       "6c698e5469ea79c813c10f91c10bb9fa0d9e8b7e21f6f67cde7ebc906772d916"
+    sha256 cellar: :any, arm64_sequoia:     "ed6727f89854eddb5ecaf523dc0dfd721d56ee10dd38be8ba77ca76152da664c"
+    sha256 cellar: :any, arm64_linux:       "ecaa8e40aafdd3925a44e9b1160452860bb7ba23a851c29c178a8edbe19bc52e"
+    sha256 cellar: :any, x86_64_linux:      "b4b0883c1f6193d84ae09270f8ea8eab5bd5d4552cdf795492d5e21ad548c441"
   end
 
   depends_on "cyrus-sasl"

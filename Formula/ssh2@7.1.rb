@@ -8,8 +8,8 @@ class Ssh2AT71 < AbstractPhpExtension
   init
   desc "Ssh2 PHP extension"
   homepage "https://github.com/php/pecl-networking-ssh2"
-  url "https://pecl.php.net/get/ssh2-1.6.0.tgz"
-  sha256 "2342df367fb01a789a1b9f6c9c780f5221c51e9c00bf1cd1dd8a5c38b98d4cc5"
+  url "https://pecl.php.net/get/ssh2-1.6.1.tgz"
+  sha256 "2212d8266df54654b282ca681ee9b82f312a776e801b667b288d80f3541741ed"
   head "https://github.com/php/pecl-networking-ssh2.git", branch: "master"
   license "PHP-3.01"
 
@@ -20,11 +20,11 @@ class Ssh2AT71 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_golden_gate: "8865d55789405e7f4b8b82f1c4c9651e5562f6c212ae15dad727b1710a3ddab8"
-    sha256 cellar: :any, arm64_tahoe:       "d8979043077b37c17aabfe056da1e058750d96087018cec9595e19c2204500b3"
-    sha256 cellar: :any, arm64_sequoia:     "fd3b85e9e5eb6ca4d15691bc2772b773f5d1034046d656921099c456de4abcbc"
-    sha256 cellar: :any, arm64_linux:       "cb08cd40faec273b77e2f8d12b07411fb0d46074f977fbe214d718cb7fdc02f7"
-    sha256 cellar: :any, x86_64_linux:      "a3b53b1a01d9bc1ef09969ade12e1925a826e37a652df28d5dfcd20f81f76510"
+    sha256 cellar: :any, arm64_golden_gate: "c53c709d98eaa61656edfa447ecf70dd1a1e9e6dcf6d6e1aaf975c21ed4fb491"
+    sha256 cellar: :any, arm64_tahoe:       "f1087a8fd6010e8dc94d435258f09d92e3a1ea102e65e62e8bfdf3446c7262f5"
+    sha256 cellar: :any, arm64_sequoia:     "28aca8b9b5de5794826445575b1c0485985d2c22b76b48d2cb1af425516c4660"
+    sha256 cellar: :any, arm64_linux:       "dd4e374dfd429302dfb0544641798ed0f2d8859ea5cbe8cc93e7ce30afa208d4"
+    sha256 cellar: :any, x86_64_linux:      "0b3967c206b64b1d4ecee0a654bb726edaa2a50a157bfa2edfae80c5851504bd"
   end
 
   depends_on "libssh2"

@@ -8,20 +8,21 @@ class XdebugAT87 < AbstractPhpExtension
   init
   desc "Xdebug PHP extension"
   homepage "https://github.com/xdebug/xdebug"
-  url "https://github.com/xdebug/xdebug/archive/85f513aca01e2edb9b854b6c1bb0f550e62f887b.tar.gz"
-  sha256 "9d42780a3a02247cda88bc7cedb0ae8d88a81d44aed96cb21f199916c526aea1"
+  url "https://github.com/xdebug/xdebug/archive/5e19866c1766e38c527f9f94faa170370dc4209f.tar.gz"
+  sha256 "a11d140cb67da8920df0a063c4d77b893b71b0195bb96f871c5f5915e0544ec8"
   version "3.5.0"
-  revision 2
+  revision 3
   head "https://github.com/xdebug/xdebug.git", branch: "master"
   license "PHP-3.0"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 arm64_golden_gate: "58b6029fa26486fc7ed804a45b1ad2d0dcf5c41b3f9116f1014ddb24b8e84913"
-    sha256 arm64_tahoe:       "7cef602fe98d88cb745459c521407d9b9facbabdc6b40abb5b123af5f41f0646"
-    sha256 arm64_sequoia:     "634f91b89823a3c7610636c449a81608ba3000630655d3e5747907977f20c0df"
-    sha256 arm64_linux:       "1408a52f585a16be2794278a914e5992d7f2b0e57385bada60271c1a5572e387"
-    sha256 x86_64_linux:      "f463aa2aea65bfae92268e0e103290dea16261a3427e9f6bd3d333a10162de06"
+    manifest_sha256 "20cc1aff9d2142afa42f0cf9f95fe9573e8a897c4b931b66163300fed7756658"
+    sha256 arm64_golden_gate: "e8ba1025907a852f4a5564fee832a4d083f8fe5eef78902cc962c5693a77f294"
+    sha256 arm64_tahoe:       "923d0374d5718b6ff7c99999c348f05031bf2ee7bf9a132c5c840b6f62b46492"
+    sha256 arm64_sequoia:     "c275ef6db88b23f450a87c3bcaa2578493129511430b3bd900d7ab30d0da2be4"
+    sha256 arm64_linux:       "6f28e723f2cb9662803ce4ab609baf6feafae9a73a5b7a8e5a5aaedcbf3b1024"
+    sha256 x86_64_linux:      "6b8d4ba7913468b0e02dbd52fb6ffb6a09f497117e398df16e1780cf2e1e4dd4"
   end
 
   on_linux do
@@ -36,6 +37,7 @@ class XdebugAT87 < AbstractPhpExtension
     inreplace "src/develop/stack.c" do |s|
       s.gsub! "INI_STR((char*) ", "zend_ini_string_literal("
     end
+    inreplace "src/lib/usefulstuff.c", "ext/standard/flock_compat.h", "main/flock_compat.h"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"

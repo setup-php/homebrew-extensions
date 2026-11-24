@@ -39,6 +39,8 @@ class AbstractPhpExtension < Formula
     "--with-php-config=#{formula_opt_bin(php_formula)}/php-config"
   end
 
+  # These methods are called or overridden by the New Relic formula subclasses.
+  # rubocop:disable Homebrew/SingleUseMethod
   def extension_type
     if extension == "xdebug"
       "zend_extension"
@@ -59,6 +61,7 @@ class AbstractPhpExtension < Formula
   rescue error
     raise error
   end
+  # rubocop:enable Homebrew/SingleUseMethod
 
   def config_scandir_path
     etc / "php" / php_version / "conf.d"
@@ -99,7 +102,9 @@ class AbstractPhpExtension < Formula
 
     sig { params(val: T.nilable(String)).returns(T.nilable(String)) }
     def priority(val = T.unsafe(nil))
-      val.nil? ? @priority : @priority = val
+      return @priority if val.nil?
+
+      @priority = val
     end
 
     def parse_extension(matches)
