@@ -8,8 +8,8 @@ class XdebugAT86 < AbstractPhpExtension
   init
   desc "Xdebug PHP extension"
   homepage "https://github.com/xdebug/xdebug"
-  url "https://github.com/xdebug/xdebug/archive/85f513aca01e2edb9b854b6c1bb0f550e62f887b.tar.gz"
-  sha256 "9d42780a3a02247cda88bc7cedb0ae8d88a81d44aed96cb21f199916c526aea1"
+  url "https://github.com/xdebug/xdebug/archive/5e19866c1766e38c527f9f94faa170370dc4209f.tar.gz"
+  sha256 "a11d140cb67da8920df0a063c4d77b893b71b0195bb96f871c5f5915e0544ec8"
   version "3.5.0"
   revision 3
   head "https://github.com/xdebug/xdebug.git", branch: "master"
@@ -17,11 +17,12 @@ class XdebugAT86 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 arm64_golden_gate: "9a4ffeab15514bb71c54bd9f4cff8cf9f0fb20389c17b82f21f5a281bbce3bc7"
-    sha256 arm64_tahoe:       "39b8f3b17777f3469f5d11d09a7a393dd9f4dc55cfc3a33a77cca81304c6f8c0"
-    sha256 arm64_sequoia:     "c504176c2a3d08f3c60d38e8f775650de146ccef098ea2728eaec69d0d40608b"
-    sha256 arm64_linux:       "899521eca965e76267aaf9842c5615608f48c16e916a41eb7bb7dab90cf1462e"
-    sha256 x86_64_linux:      "66d2ae0dca67821f704b276a720f2e40d762a825867a7bbbb00d44ac7b8bcb13"
+    rebuild 1
+    sha256 arm64_golden_gate: "ef2cdc1b71c4dc178fbec115bad1c6c704b7b80d3ec13a45aefb0dba0a408a9c"
+    sha256 arm64_tahoe:       "6341a2b38b0d1df8a8017317f43f12e4820a118318684995ea98154c5d822441"
+    sha256 arm64_sequoia:     "c7f9826937ec58fc58ada9f1b6a52f417f9c3576389f1c059d91f86438647ac6"
+    sha256 arm64_linux:       "77f8e5e48adbe21c284b5e800046d818e4b75d5d7ea6fa0c94f04d8c88f15168"
+    sha256 x86_64_linux:      "4230a5c3d750d4cbf8e178ce413d6420346eb4622ce558d0a28040e70945150b"
   end
 
   on_linux do
